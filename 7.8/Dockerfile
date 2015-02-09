@@ -22,7 +22,10 @@ ENV DEB_REV_GHC     -1
 ## install ghc
 RUN apt-get update\
  && apt-get install ${OPTS_APT}\
-      ghc-7.8.3="${MAJOR_GHC}""${MINOR_GHC}""${DEB_REV_GHC}""-prof"
+      ghc-7.8.3="${MAJOR_GHC}""${MINOR_GHC}""${DEB_REV_GHC}"
+
+RUN apt-get install ${OPTS_APT}\
+      ghc-7.8.3-prof
 
 ## set upstream package versions (major-level) for remaining haskell packages
 ENV MAJOR_ALEX      3.1
